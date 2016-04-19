@@ -7,10 +7,6 @@ import java.awt.image.BufferedImage;
 
 public class TrafficLab extends JPanel
 {
-	private int x;
-	private BufferedImage buffered;
-	private ArrayList<Automobile> autos; 
-	
 	Color black = new Color(0, 0, 0);
 	Color gray = new Color(121, 90, 90);
 	Color white = new Color (255, 255, 255);
@@ -20,19 +16,24 @@ public class TrafficLab extends JPanel
 	Color blue = new Color (51, 51, 255);
 	Color green = new Color (0, 204, 0);
 	Color red = new Color (102, 51, 0);
-		
+	
+	private int x;
+	private BufferedImage buffered;
+	private ArrayList<Automobile> autos; 
+    private Dimensions dimensions = new Dimensions();
+	
+	
 	public TrafficLab()
 	{
 		autos = new ArrayList<Automobile>();
-		autos.add(new Automobile(blue, 0, 0));
+		autos.add(new Automobile(blue, 0, 200));
 	}
 	
 	public Dimension getPreferredSize()
 	{
-		Dimension windowSize = new Dimension(1200,600);
-        return windowSize;
+        return new Dimension(dimensions.width, dimensions.height);
 	}
-	
+
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
@@ -43,7 +44,7 @@ public class TrafficLab extends JPanel
 		Graphics gBuf = buffered.createGraphics();
 		//background
 		gBuf.setColor(white);
-		gBuf.fillRect(0, 0, 1200, 600);
+		gBuf.fillRect(0, 0, dimensions.width, dimensions.height);
 		
 		// Draw all cars		
 		for (Automobile auto : autos) {
@@ -54,23 +55,18 @@ public class TrafficLab extends JPanel
 	}
 	
 	public void animate()
-	{
+	{		
 		while(true)
 		{
-			int count = 0;
-			
-			while(count < 1080)
-			{
-				try {
-					Thread.sleep(10);
-				} catch(InterruptedException ex) {
-					Thread.currentThread().interrupt();
-				}
-				
-				count++;
-				
-				repaint();
+			try {
+				Thread.sleep(10);
+			} catch(InterruptedException ex) {
+				Thread.currentThread().interrupt();
 			}
+			
+			dimensions.tick();
+			
+			repaint();
 		}
 	}
 }

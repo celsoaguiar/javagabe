@@ -6,14 +6,13 @@ import java.util.Random;
 import java.awt.image.BufferedImage;
 
 public class Automobile {
-    private int ticker = 0;
     private int posX = 0;
     private int x;
     private int y;
-    private int speed;
+    private int speed = 8;
     private Color bodyColor;
     private Color tireColor = new Color(0, 0, 0);
-
+    private Dimensions dimensions = new Dimensions();
 
     public Automobile(Color color, int x, int y) {
         this.bodyColor = color;
@@ -25,7 +24,7 @@ public class Automobile {
     public void drawMe(Graphics g) {
 		drawFrame(g);
         drawWheels(g);
-        tick();
+        calc();
     }
     //Draw a simple wheel
     public void drawWheels(Graphics g) {
@@ -39,9 +38,8 @@ public class Automobile {
 		g.fillRect(posX, y, 150, 50);         
     }
 
-    public void tick() {
-        posX = ticker * speed + x;
-        ticker++;
+    public void calc() {
+        posX = (dimensions.ticker * speed + x) % dimensions.width;
     }
     
     public int getX() {
