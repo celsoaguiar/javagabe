@@ -14,10 +14,11 @@ public class Automobile {
     private Color tireColor = new Color(0, 0, 0);
     private Dimensions dimensions = new Dimensions();
 
-    public Automobile(Color color, int x, int y) {
+    public Automobile(Color color, int x, int y, int speed) {
         this.bodyColor = color;
         this.x = x;
         this.y = y;
+        this.speed = speed;
     }
     
     // Draws the wheel and frame by calling its corresponding methods.

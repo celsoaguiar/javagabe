@@ -8,8 +8,8 @@ import java.awt.image.BufferedImage;
 // : void ­ Override (4 door Frame)
 public class SUV extends BigCar {
     
-    public SUV(Color color, int x, int y) {
-        super(color, x, y);
+    public SUV(Color color, int x, int y, int speed) {
+        super(color, x, y, speed);
     }
 
     public void drawFrame(Graphics g) {

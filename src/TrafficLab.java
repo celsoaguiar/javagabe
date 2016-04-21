@@ -26,7 +26,9 @@ public class TrafficLab extends JPanel
 	public TrafficLab()
 	{
 		autos = new ArrayList<Automobile>();
-		autos.add(new Automobile(blue, 0, 200));
+		autos.add(new Automobile(blue, 0, 200, 2));
+		autos.add(new Automobile(red, 100, 300, 3));
+		autos.add(new Automobile(green, 200, 400, 5));
 	}
 	
 	public Dimension getPreferredSize()

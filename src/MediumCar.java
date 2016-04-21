@@ -7,8 +7,8 @@ import java.awt.image.BufferedImage;
 
 public class MediumCar extends Automobile {
    
-    public MediumCar(Color color, int x, int y) {
-        super(color, x, y);
+    public MediumCar(Color color, int x, int y, int speed) {
+        super(color, x, y, speed);
     }
 
     //More detailed Wheels (add a hubcap)

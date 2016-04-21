@@ -7,8 +7,8 @@ import java.awt.image.BufferedImage;
 
 public class BigCar extends Automobile {
 
-    public BigCar(Color color, int x, int y) {
-        super(color, x, y);
+    public BigCar(Color color, int x, int y, int speed) {
+        super(color, x, y, speed);
     }
     
     // : void ­ Override (Larger size frame with windows and lights)
