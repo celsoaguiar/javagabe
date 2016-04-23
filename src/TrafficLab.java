@@ -6,34 +6,23 @@ import java.util.*;
 import java.awt.image.BufferedImage;
 
 public class TrafficLab extends JPanel
-{
-	Color black = new Color(0, 0, 0);
-	Color gray = new Color(121, 90, 90);
-	Color white = new Color (255, 255, 255);
-	Color darkgray = new Color (32, 32, 32);
-	Color lightgray = new Color (160, 160, 160);
-	Color yellow = new Color (255, 255, 0);
-	Color blue = new Color (51, 51, 255);
-	Color green = new Color (0, 204, 0);
-	Color red = new Color (102, 51, 0);
-	
+{	
 	private int x;
 	private BufferedImage buffered;
 	private ArrayList<Automobile> autos; 
-    private Dimensions dimensions = new Dimensions();
-	
+    private Dimensions d = new Dimensions();
 	
 	public TrafficLab()
 	{
 		autos = new ArrayList<Automobile>();
-		autos.add(new Automobile(blue, 0, 200, 2));
-		autos.add(new Automobile(red, 100, 300, 3));
-		autos.add(new Automobile(green, 200, 400, 5));
+		autos.add(new BigCar(d.blue, 0, 200, 2));
+		autos.add(new MediumCar(d.red, 100, 300, 3));
+		autos.add(new Automobile(d.green, 200, 400, 5));
 	}
 	
 	public Dimension getPreferredSize()
 	{
-        return new Dimension(dimensions.width, dimensions.height);
+        return new Dimension(d.width, d.height);
 	}
 
 	public void paintComponent(Graphics g)
@@ -45,8 +34,8 @@ public class TrafficLab extends JPanel
 		}
 		Graphics gBuf = buffered.createGraphics();
 		//background
-		gBuf.setColor(white);
-		gBuf.fillRect(0, 0, dimensions.width, dimensions.height);
+		gBuf.setColor(d.white);
+		gBuf.fillRect(0, 0, d.width, d.height);
 		
 		// Draw all cars		
 		for (Automobile auto : autos) {
@@ -66,7 +55,7 @@ public class TrafficLab extends JPanel
 				Thread.currentThread().interrupt();
 			}
 			
-			dimensions.tick();
+			d.tick();
 			
 			repaint();
 		}

@@ -6,9 +6,9 @@ import java.util.Random;
 import java.awt.image.BufferedImage;
 
 public class Automobile {
-    private int posX = 0;
-    private int x;
-    private int y;
+    protected int posX = 0;
+    protected int x;
+    protected int y;
     private int speed = 8;
     private Color bodyColor;
     private Color tireColor = new Color(0, 0, 0);

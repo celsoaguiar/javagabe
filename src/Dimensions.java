@@ -11,6 +11,16 @@ public class Dimensions {
     public static int height = 800;
     public static int ticker = 0;
     
+    public Color black = new Color(0, 0, 0);
+	public Color gray = new Color(121, 90, 90);
+	public Color white = new Color (255, 255, 255);
+	public Color darkgray = new Color (32, 32, 32);
+	public Color lightgray = new Color (160, 160, 160);
+	public Color yellow = new Color (255, 255, 0);
+	public Color blue = new Color (51, 51, 255);
+	public Color green = new Color (0, 204, 0);
+	public Color red = new Color (102, 51, 0);
+        
     protected Dimensions() {
         // Exists only to defeat instantiation.
     }
