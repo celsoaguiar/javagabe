@@ -23,6 +23,10 @@ public class MediumCar extends Automobile {
         g.drawPolygon(xpoints, ypoints, npoints);
         
         g.drawLine(posX+75, y-30, posX+75, y+0);
+        
+        // lights
+        g.setColor(d.yellow);
+		g.fillOval(posX+144, y+30, 10, 10);
     }
     
     //More detailed Wheels (add a hubcap)

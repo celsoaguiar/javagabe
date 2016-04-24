@@ -33,10 +33,21 @@ public class Automobile {
 		g.fillOval(posX+20, y+30, 30, 30);
 		g.fillOval(posX+100, y+30, 30, 30);            
     }
+    //Draw a simple wheel
+    public void drawWheelsLarge(Graphics g) {
+		g.setColor(tireColor);
+		g.fillOval(posX+30, y+30, 30, 30);
+		g.fillOval(posX+140, y+30, 30, 30);            
+    }
     //Draw a simple frame.
     public void drawFrame(Graphics g) {
         g.setColor(bodyColor);
 		g.fillRect(posX, y, 150, 50);         
+    }
+    //Draw a simple frame.
+    public void drawFrameLarge(Graphics g) {
+        g.setColor(bodyColor);
+		g.fillRect(posX, y, 200, 50);         
     }
 
     public void calc() {
@@ -44,9 +55,9 @@ public class Automobile {
     }
     
     public int getX() {
-        return x;
+        return this.posX;
     }
     public int getY() {
-        return x;
+        return this.y;
     }
 }

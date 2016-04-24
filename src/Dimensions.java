@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 
 public class Dimensions {
     private static Dimensions instance = null;
-    public static int width = 2000;
+    public static int width = 1600;
     public static int height = 800;
     public static int ticker = 0;
     
